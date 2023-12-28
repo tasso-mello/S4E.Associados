@@ -8,13 +8,18 @@ namespace api.S4E.Associados.Structure.Injections
     {
         public static IServiceCollection AddDatabaseConf(this IServiceCollection services, ConfigurationManager configuration)
         {
+            var canCreateDatabase = Convert.ToBoolean(configuration.GetSection("CanCreateDatabase").Value);
+            
+            if(canCreateDatabase)
+                DbSeed.AddDatabase("server=localhost;Integrated security=True;TrustServerCertificate=True;");
+
             var connectionString = configuration.GetConnectionString("SqlConnection");
 
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(connectionString)
                        .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
 
-            DbSeed.AddDatabaseWithSeed(connectionString);
+
 
             return services;
         }

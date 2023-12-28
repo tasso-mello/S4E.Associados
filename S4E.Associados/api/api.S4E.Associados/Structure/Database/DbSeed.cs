@@ -5,12 +5,11 @@
 
     public class DbSeed
     {
-        public static void AddDatabaseWithSeed(string connection)
+        public static void AddDatabase(string connection)
             => CreateDataBase(connection);
 
         private static void CreateDataBase(string connection)
         {
-            //SqlConnection.ClearAllPools();
             var myConn = new SqlConnection(connection);
 
             SqlCommand myCommand = new SqlCommand(Queries.CreateDatabase(), myConn);
