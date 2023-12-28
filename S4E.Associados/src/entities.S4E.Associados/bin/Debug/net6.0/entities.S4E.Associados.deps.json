@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "entities.S4E.Associados/1.0.0": {
+        "runtime": {
+          "entities.S4E.Associados.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "entities.S4E.Associados/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\domain.S4E.Associados\domain.S4E.Associados.csproj" />
+    <ProjectReference Include="..\repository.S4E.Associados\repository.S4E.Associados.csproj" />
+  </ItemGroup>
+
+</Project>

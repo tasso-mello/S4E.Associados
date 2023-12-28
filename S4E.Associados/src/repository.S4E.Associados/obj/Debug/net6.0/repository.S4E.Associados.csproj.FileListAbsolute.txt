@@ -1,0 +1,17 @@
+C:\Projetos\Pessoal\Github\S4E.Associados\S4E.Associados\src\repository.S4E.Associados\obj\Debug\net6.0\repository.S4E.Associados.csproj.AssemblyReference.cache
+C:\Projetos\Pessoal\Github\S4E.Associados\S4E.Associados\src\repository.S4E.Associados\obj\Debug\net6.0\repository.S4E.Associados.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projetos\Pessoal\Github\S4E.Associados\S4E.Associados\src\repository.S4E.Associados\obj\Debug\net6.0\repository.S4E.Associados.AssemblyInfoInputs.cache
+C:\Projetos\Pessoal\Github\S4E.Associados\S4E.Associados\src\repository.S4E.Associados\obj\Debug\net6.0\repository.S4E.Associados.AssemblyInfo.cs
+C:\Projetos\Pessoal\Github\S4E.Associados\S4E.Associados\src\repository.S4E.Associados\obj\Debug\net6.0\repository.S4E.Associados.csproj.CoreCompileInputs.cache
+C:\Projetos\Pessoal\Github\S4E.Associados\S4E.Associados\src\repository.S4E.Associados\bin\Debug\net6.0\repository.S4E.Associados.deps.json
+C:\Projetos\Pessoal\Github\S4E.Associados\S4E.Associados\src\repository.S4E.Associados\bin\Debug\net6.0\repository.S4E.Associados.runtimeconfig.json
+C:\Projetos\Pessoal\Github\S4E.Associados\S4E.Associados\src\repository.S4E.Associados\bin\Debug\net6.0\repository.S4E.Associados.dll
+C:\Projetos\Pessoal\Github\S4E.Associados\S4E.Associados\src\repository.S4E.Associados\bin\Debug\net6.0\repository.S4E.Associados.pdb
+C:\Projetos\Pessoal\Github\S4E.Associados\S4E.Associados\src\repository.S4E.Associados\bin\Debug\net6.0\entities.S4E.Associados.dll
+C:\Projetos\Pessoal\Github\S4E.Associados\S4E.Associados\src\repository.S4E.Associados\bin\Debug\net6.0\entities.S4E.Associados.pdb
+C:\Projetos\Pessoal\Github\S4E.Associados\S4E.Associados\src\repository.S4E.Associados\obj\Debug\net6.0\repository.S4E.Associados.csproj.CopyComplete
+C:\Projetos\Pessoal\Github\S4E.Associados\S4E.Associados\src\repository.S4E.Associados\obj\Debug\net6.0\repository.S4E.Associados.dll
+C:\Projetos\Pessoal\Github\S4E.Associados\S4E.Associados\src\repository.S4E.Associados\obj\Debug\net6.0\refint\repository.S4E.Associados.dll
+C:\Projetos\Pessoal\Github\S4E.Associados\S4E.Associados\src\repository.S4E.Associados\obj\Debug\net6.0\repository.S4E.Associados.pdb
+C:\Projetos\Pessoal\Github\S4E.Associados\S4E.Associados\src\repository.S4E.Associados\obj\Debug\net6.0\repository.S4E.Associados.genruntimeconfig.cache
+C:\Projetos\Pessoal\Github\S4E.Associados\S4E.Associados\src\repository.S4E.Associados\obj\Debug\net6.0\ref\repository.S4E.Associados.dll
