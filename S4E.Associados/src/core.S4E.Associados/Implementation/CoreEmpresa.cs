@@ -43,17 +43,24 @@
         public async Task<string> Put(Empresa model)
         {
             var entityAssociado = model.ToEmpresaEntity();
-            var empresaCriada = await empresaRepository.Create(entityAssociado);
+            var empresaModificada = await empresaRepository.Update(entityAssociado);
 
-            var associadoEmpresa = model.Associados.ToAssociadoEmpresaEntity(empresaCriada.Id);
+            await associadoEmpresaRepository.Delete(ae => ae.EmpresaId == empresaModificada.Id);
+
+            var associadoEmpresa = model.Associados.ToAssociadoEmpresaEntity(empresaModificada.Id);
             if (associadoEmpresa != null)
-                await associadoEmpresaRepository.Update(associadoEmpresa);
+                await associadoEmpresaRepository.Create(associadoEmpresa);
 
-            return Responses.GetCreatedResponse("empresa", empresaCriada.Id, "Empresa modificada.");
+            return Responses.GetCreatedResponse("empresa", empresaModificada.Id, "Empresa modificada.");
         }
 
         public async Task<string> Delete(int id)
         {
+            var associadosEmpresa = await associadoEmpresaRepository.Read(a => a.AssociadoId == id);
+
+            foreach (var associadoEmpresa in associadosEmpresa)
+                await associadoEmpresaRepository.Delete(associadoEmpresa);
+
             await empresaRepository.Delete(id);
             return Responses.GetObjectResponse("empresa", "Empresa removido.");
         }

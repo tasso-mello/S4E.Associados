@@ -41,8 +41,6 @@
                     <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
                         <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
                             <li class=" smooth-menu active"></li>
-                            <li class="smooth-menu"><a href="#associados">Associados</a></li>
-                            <li class="smooth-menu"><a href="#empresas">Empresas</a></li>
                         </ul>
                     </div>
                 </div>
@@ -52,12 +50,12 @@
         <div class="clearfix"></div>
 
     </header>
-    <div name="alert" class="alert alert-primary text-white font-weight-bold" role="alert"></div>
     <br /><br /><br /><br />
 
     <section id="associados" class="contact">
         <div class="section-heading text-center">
             <h2>Associados</h2>
+            <div name="alert" class="alert alert-primary text-white font-weight-bold" role="alert"></div>
         </div>
         <div class="container">
             <div class="contact-content">
@@ -66,34 +64,41 @@
                         <div class="single-contact-box">
                             <div class="contact-form">
                                 <form>
-                                    <div class="col-lg-12">
-                                        <div class="table-responsive">
-                                            <table class="table table-pricing">
-                                                <thead class="text-light">
-                                                    <tr>
-                                                        <th class="text-center">
-                                                            <h6 class="font-weight-bold">Nome</h6>
-                                                        </th>
-                                                        <th class="text-center">
-                                                            <h6 class="font-weight-bold">CPF</h6>
-                                                        </th>
-                                                        <th class="text-center">
-                                                            <h6 class="font-weight-bold">Nascimento</h6>
-                                                        </th>
-                                                        <th class="text-center">
-                                                            <h6 class="font-weight-bold">Empresas</h6>
-                                                        </th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody id="associados-body">
-                                                </tbody>
-                                            </table>
+                                    <div class="row">
+                                        <div class="col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="name" placeholder="Nome*" name="name">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="cpf" placeholder="CPF*" name="cpf" maxlength="11">
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <input type="date" class="form-control" id="nascimento" placeholder="Nascimento" name="nascimento">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <select class="form-control" name="empresas-drop" id="empresas-drop" multiple></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="Associado-action" class="row">
+                                        <div class="col-sm-4">
                                             <div class="single-contact-btn">
-                                                <a class="contact-btn" href="Associados.html" role="button">Novo Associado</a>
+                                                <button class="contact-btn" onclick="saveAssociado(event)">Salvar</button>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="single-contact-btn">
+                                                <a class="contact-btn" href="index.html" role="button">Voltar</a>
                                             </div>
                                         </div>
                                     </div>
@@ -105,53 +110,6 @@
             </div>
         </div>
 
-    </section>
-    <section id="empresas" class="contact">
-        <div class="section-heading text-center">
-            <h2>Empresas</h2>
-        </div>
-        <div class="container">
-            <div class="contact-content">
-                <div class="row">
-                    <div class="col-md-offset-1 col-md-11 col-sm-12">
-                        <div class="single-contact-box">
-                            <div class="contact-form">
-                                <form>
-                                    <div class="col-lg-12">
-                                        <div class="table-responsive">
-                                            <table class="table table-pricing">
-                                                <thead class="text-light">
-                                                    <tr ondblclick="editEmpresas()">
-                                                        <th class="text-center">
-                                                            <h6 class="font-weight-bold">Nome</h6>
-                                                        </th>
-                                                        <th class="text-center">
-                                                            <h6 class="font-weight-bold">CNPJ</h6>
-                                                        </th>
-                                                        <th class="text-center">
-                                                            <h6 class="font-weight-bold">Associados</h6>
-                                                        </th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody id="empresas-body">
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <div class="single-contact-btn">
-                                                <a class="contact-btn" href="Empresas.html" role="button">Nova Empresa</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
 
     <footer id="footer-copyright" class="footer-copyright">

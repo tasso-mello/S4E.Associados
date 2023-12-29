@@ -24,7 +24,7 @@
         public async Task<IActionResult> Get(int skip = 1, int take = 10)
             => await ToResponseAsync(await coreEmpresa.Get(skip, take), Request.Method);
         
-        [HttpGet("filter/{filter}")]
+        [HttpGet("{filter}/filter")]
         public async Task<IActionResult> Get(string filter, int skip = 1, int take = 10)
             => await ToResponseAsync(await coreEmpresa.Get(filter, skip, take), Request.Method);
 
@@ -36,7 +36,7 @@
         public async Task<IActionResult> Put(Empresa jsonObject)
             => await ToResponseAsync(await coreEmpresa.Put(jsonObject), Request.Method);
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
             => await ToResponseAsync(await coreEmpresa.Delete(id), Request.Method);
     }

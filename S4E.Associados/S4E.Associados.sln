@@ -9,7 +9,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "api", "api", "{E8D85F64-E8C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "website", "website", "{4BFC7A60-0B59-459E-B639-DFA942F8C13C}"
 	ProjectSection(SolutionItems) = preProject
+		website\Associados.html = website\Associados.html
+		website\Empresas.html = website\Empresas.html
 		website\index.html = website\index.html
+		website\assets\js\site.js = website\assets\js\site.js
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "repository.S4E.Associados", "src\repository.S4E.Associados\repository.S4E.Associados.csproj", "{152B1368-5E56-41B3-B5E7-FC0957F343E6}"

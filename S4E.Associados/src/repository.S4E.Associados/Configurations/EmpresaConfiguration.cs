@@ -12,5 +12,9 @@ public class EmpresaConfiguration : IEntityTypeConfiguration<Empresa>
         builder.Property(a => a.Id).ValueGeneratedOnAdd();
         builder.Property(e => e.CNPJ).IsRequired().HasMaxLength(14);
         builder.HasIndex(e => e.CNPJ).IsUnique();
+
+        builder.HasMany(a => a.AssociadosEmpresa)
+               .WithOne(e => e.Empresa)
+               .OnDelete(DeleteBehavior.Cascade);
     }
 }

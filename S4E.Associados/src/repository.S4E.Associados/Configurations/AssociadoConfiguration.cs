@@ -12,5 +12,9 @@ public class AssociadoConfiguration : IEntityTypeConfiguration<Associado>
         builder.Property(a => a.Id).ValueGeneratedOnAdd();
         builder.Property(a => a.CPF).IsRequired().HasMaxLength(11);
         builder.HasIndex(a => a.CPF).IsUnique();
+
+        builder.HasMany(a => a.AssociadoEmpresas)
+               .WithOne(e => e.Associado)
+               .OnDelete(DeleteBehavior.Cascade);
     }
 }

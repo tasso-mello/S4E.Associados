@@ -24,6 +24,7 @@
         Task Update(IEnumerable<T> entity);
         Task Delete(long id);
         Task Delete(T entity);
+        Task Delete(Expression<Func<T, bool>> where);
     }
 
     public class Repository<T> : IRepository<T> where T : class
@@ -41,12 +42,13 @@
         {
             var saved = await _dbSet.AddAsync(entity);
             _dbContext.Entry(entity).State = EntityState.Added;
+            await _dbContext.SaveChangesAsync();
             return saved.Entity;
         }
         public virtual async Task Create(IEnumerable<T> entity)
         {
             await _dbSet.AddRangeAsync(entity);
-            _dbContext.Entry(entity).State = EntityState.Added;
+            await _dbContext.SaveChangesAsync();
         }
         public virtual async Task<IEnumerable<T>> Read() => await _dbSet.ToListAsync();
         public virtual async Task<IEnumerable<T>> Read(List<string>? includes = null)
@@ -122,12 +124,13 @@
         {
             var updated = _dbSet.Attach(entity);
             _dbContext.Entry(entity).State = EntityState.Modified;
+            await _dbContext.SaveChangesAsync();
             return updated.Entity;
         }
         public virtual async Task Update(IEnumerable<T> entity)
         {
             _dbSet.AttachRange(entity);
-            _dbContext.Entry(entity).State = EntityState.Modified;
+            await _dbContext.SaveChangesAsync();
         }
         public virtual async Task Delete(long id)
         {
@@ -138,6 +141,16 @@
         {
             _dbSet.Remove(entity);
             await _dbContext.SaveChangesAsync();
+        }        
+        public virtual async Task Delete(Expression<Func<T, bool>> where)
+        {
+            var entitiesToDelete = await _dbSet.Where(where).ToListAsync();
+
+            if (entitiesToDelete.Any())
+            {
+                _dbSet.RemoveRange(entitiesToDelete);
+                await _dbContext.SaveChangesAsync();
+            }
         }
     }
 }

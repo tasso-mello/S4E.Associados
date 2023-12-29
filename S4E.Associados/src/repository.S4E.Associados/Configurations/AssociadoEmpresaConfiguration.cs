@@ -12,11 +12,12 @@ public class AssociadoEmpresaConfiguration : IEntityTypeConfiguration<AssociadoE
 
         builder.HasOne(ae => ae.Associado)
                .WithMany(a => a.AssociadoEmpresas)
-               .HasForeignKey(ae => ae.AssociadoId);
+               .HasForeignKey(ae => ae.AssociadoId)
+               .OnDelete(DeleteBehavior.Cascade); ;
 
         builder.HasOne(ae => ae.Empresa)
                .WithMany(e => e.AssociadosEmpresa)
-               .HasForeignKey(ae => ae.EmpresaId);
-
+               .HasForeignKey(ae => ae.EmpresaId)
+               .OnDelete(DeleteBehavior.Cascade);
     }
 }
