@@ -19,7 +19,9 @@
 
 5. Execute o projeto da API.
 
-6. Abra o arquivo `index.html` dentro da pasta `website` no navegador para interagir com a aplicação.
+6. O `swagger` será aberto automaticamente. Caso não abra, acesse: https://localhost:7050/swagger/index.html
+
+7. Abra o arquivo `index.html` dentro da pasta `website` no navegador para interagir com a aplicação.
 
 **Funcionalidades:**
 - Para adicionar um novo associado, clique no botão "Novo Associado".
