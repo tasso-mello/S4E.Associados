@@ -17,6 +17,19 @@
             myConn.Open();
             myCommand.ExecuteNonQuery();
             myConn.Close();
+
+            CreateTables(connection);
+        }
+
+        private static void CreateTables(string connection)
+        {
+            var myConn = new SqlConnection(connection);
+
+            SqlCommand myCommand = new SqlCommand(Queries.CreateTables(), myConn);
+
+            myConn.Open();
+            myCommand.ExecuteNonQuery();
+            myConn.Close();
         }
     }
 }

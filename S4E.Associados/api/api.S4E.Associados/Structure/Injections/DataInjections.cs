@@ -7,8 +7,9 @@
     {
         public static IServiceCollection AddDataInjections(this IServiceCollection services)
         {
-            services.AddScoped<IAssociadoRepository, AssociadoRepository>();
             services.AddScoped<IEmpresaRepository, EmpresaRepository>();
+            services.AddScoped<IAssociadoRepository, AssociadoRepository>();
+            services.AddScoped<IAssociadoEmpresaRepository, AssociadoEmpresaRepository>();
 
             return services;
         }

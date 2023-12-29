@@ -16,21 +16,27 @@
             this.coreAssociado = coreAssociado;
         }
 
+        [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
             => await ToResponseAsync(await coreAssociado.Get(id), Request.Method);
 
+        [HttpGet]
         public async Task<IActionResult> Get(int skip = 1, int take = 10)
             => await ToResponseAsync(await coreAssociado.Get(skip, take), Request.Method);
 
+        [HttpGet("filter/{filter}")]
         public async Task<IActionResult> Get(string filter, int skip = 1, int take = 10)
             => await ToResponseAsync(await coreAssociado.Get(filter, skip, take), Request.Method);
-
+        
+        [HttpPost]
         public async Task<IActionResult> Post(Associado jsonObject)
             => await ToResponseAsync(await coreAssociado.Post(jsonObject), Request.Method);
 
+        [HttpPut]
         public async Task<IActionResult> Put(Associado jsonObject)
             => await ToResponseAsync(await coreAssociado.Put(jsonObject), Request.Method);
 
+        [HttpDelete]
         public async Task<IActionResult> Delete(int id)
             => await ToResponseAsync(await coreAssociado.Delete(id), Request.Method);
     }

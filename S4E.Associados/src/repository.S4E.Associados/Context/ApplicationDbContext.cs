@@ -8,6 +8,7 @@
         public ApplicationDbContext(DbContextOptions options) : base(options) { }
         public DbSet<Associado> Associados { get; set; }
         public DbSet<Empresa> Empresas { get; set; }
+        public DbSet<AssociadoEmpresa> AssociadoEmpresa { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

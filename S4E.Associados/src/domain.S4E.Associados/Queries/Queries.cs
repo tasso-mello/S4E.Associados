@@ -6,4 +6,7 @@ public static class Queries
 {
     public static string CreateDatabase()
         => Resources.CreateDatabase;
+
+    public static string CreateTables()
+        => Resources.CreateTables;
 }

@@ -11,7 +11,7 @@ namespace api.S4E.Associados.Structure.Injections
             var canCreateDatabase = Convert.ToBoolean(configuration.GetSection("CanCreateDatabase").Value);
             
             if(canCreateDatabase)
-                DbSeed.AddDatabase("server=localhost;Integrated security=True;TrustServerCertificate=True;");
+                DbSeed.AddDatabase("server=tasso-desk;User ID=s4e;Password=s4e;TrustServerCertificate=True;");
 
             var connectionString = configuration.GetConnectionString("SqlConnection");
 

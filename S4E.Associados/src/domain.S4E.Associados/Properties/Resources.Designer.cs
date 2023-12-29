@@ -65,10 +65,17 @@ namespace domain.S4E.Associados.Properties {
         ///
         ///IF NOT EXISTS (SELECT name FROM sys.databases WHERE name = &apos;S4E-Associados&apos;)
         ///BEGIN
-        ///    CREATE DATABASE [S4E-Associados];
-        ///END
-        ///
-        ///USE [S4E-Associados];
+        ///    CREATE DATABASE [S4E-Associados]
+        ///END.
+        /// </summary>
+        internal static string CreateDatabase {
+            get {
+                return ResourceManager.GetString("CreateDatabase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to USE [S4E-Associados]
         ///
         ///IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = &apos;Associados&apos;)
         ///BEGIN
@@ -78,14 +85,20 @@ namespace domain.S4E.Associados.Properties {
         ///        Nome NVARCHAR(MAX),
         ///        CPF NVARCHAR(11) UNIQUE,
         ///        Nascimento DATETIME
-        ///    );
+        ///    )
         ///END
         ///
-        ///IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES W [rest of string was truncated]&quot;;.
+        ///IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = &apos;Empresas&apos;)
+        ///BEGIN
+        ///    CREATE TABLE Empresas
+        ///    (
+        ///        Id BIGINT IDENTITY(1,1) PRIMARY KEY,
+        ///        Nome NVARCHAR(MAX),
+        ///  [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string CreateDatabase {
+        internal static string CreateTables {
             get {
-                return ResourceManager.GetString("CreateDatabase", resourceCulture);
+                return ResourceManager.GetString("CreateTables", resourceCulture);
             }
         }
     }
