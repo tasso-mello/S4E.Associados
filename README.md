@@ -17,7 +17,7 @@ Bem-vindo ao S4E-Associados!
 
 3. Modifique a propriedade `CanCreateInitialSeed` no arquivo de configuração `appsettings.Development.json` da API para `true` se desejar executar um seed inicial.
 
-4. Selecione a API como o projeto de inicialização.
+4. Abra o projeto com `Visual Studio 2022` e eelecione a `api.S4E.Associados` como o projeto de inicialização.
 
 5. Execute o projeto da API.
 
