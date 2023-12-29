@@ -59,7 +59,7 @@
         }
 
         private Expression<Func<entities.S4E.Associados.Empresa, bool>> GetFilter(string filter)
-            => p => p.Nome.Contains(filter);
+            => p => p.Nome.Contains(filter) || p.CNPJ.Contains(filter);
 
         private List<string> GetIncludes()
             => new List<string> { "AssociadosEmpresa", "AssociadosEmpresa.Associado" };

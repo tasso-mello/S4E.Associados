@@ -8,16 +8,19 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "api", "api", "{E8D85F64-E8C0-491B-B771-19BB44F65E13}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "website", "website", "{4BFC7A60-0B59-459E-B639-DFA942F8C13C}"
+	ProjectSection(SolutionItems) = preProject
+		website\index.html = website\index.html
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "repository.S4E.Associados", "src\repository.S4E.Associados\repository.S4E.Associados.csproj", "{152B1368-5E56-41B3-B5E7-FC0957F343E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "repository.S4E.Associados", "src\repository.S4E.Associados\repository.S4E.Associados.csproj", "{152B1368-5E56-41B3-B5E7-FC0957F343E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "entities.S4E.Associados", "src\entities.S4E.Associados\entities.S4E.Associados.csproj", "{711F5A25-B8A4-44F5-A84F-BD3EC5382265}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "entities.S4E.Associados", "src\entities.S4E.Associados\entities.S4E.Associados.csproj", "{711F5A25-B8A4-44F5-A84F-BD3EC5382265}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "domain.S4E.Associados", "src\domain.S4E.Associados\domain.S4E.Associados.csproj", "{1F9290DA-720C-4B20-9100-B8F65E845D22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "domain.S4E.Associados", "src\domain.S4E.Associados\domain.S4E.Associados.csproj", "{1F9290DA-720C-4B20-9100-B8F65E845D22}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "api.S4E.Associados", "api\api.S4E.Associados\api.S4E.Associados.csproj", "{C425643C-6D48-44CA-AE94-A7A6F7B81395}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "api.S4E.Associados", "api\api.S4E.Associados\api.S4E.Associados.csproj", "{C425643C-6D48-44CA-AE94-A7A6F7B81395}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "core.S4E.Associados", "src\core.S4E.Associados\core.S4E.Associados.csproj", "{6218E368-16FE-4DFD-910F-110BE3373DCD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "core.S4E.Associados", "src\core.S4E.Associados\core.S4E.Associados.csproj", "{6218E368-16FE-4DFD-910F-110BE3373DCD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
