@@ -2,7 +2,7 @@
 using repository.S4E.Associados.Context;
 using repository.S4E.Associados.Infrastructure;
 
-namespace repository.S4E.Empresas.Repositories
+namespace repository.S4E.Associados.Repositories
 {
     public interface IEmpresaRepository : IRepository<Empresa> { }
 

@@ -1,7 +1,6 @@
 ﻿namespace api.S4E.Associados.Structure.Injections
 {
     using repository.S4E.Associados.Repositories;
-    using repository.S4E.Empresas.Repositories;
 
     public static class DataInjections
     {

@@ -1,38 +1,67 @@
 ﻿namespace core.S4E.Associados.Implementation
 {
+    using AutoMapper;
     using core.S4E.Associados.Contracts;
+    using domain.S4E.Associados.Extensions;
     using domain.S4E.Associados.Models;
+    using repository.S4E.Associados.Repositories;
+    using System.Linq.Expressions;
 
     public class CoreEmpresa : ICoreEmpresa
     {
-        public Task<string> Delete(int id)
+        private readonly IEmpresaRepository empresaRepository;
+        private readonly IAssociadoEmpresaRepository associadoEmpresaRepository;
+
+        public CoreEmpresa(IMapper mapper, IEmpresaRepository associadoRepository, IAssociadoEmpresaRepository associadoEmpresaRepository)
         {
-            throw new NotImplementedException();
+            Convertions.mapper = mapper;
+            this.empresaRepository = associadoRepository;
+            this.associadoEmpresaRepository = associadoEmpresaRepository;
         }
 
-        public Task<string> Get(int id)
+        public async Task<string> Get(int id)
+            => Responses.GetResponse("empresa", (await empresaRepository.ReadOne(a => a.Id == id, GetIncludes())).ToEmpresaModel());
+
+        public async Task<string> Get(int skip, int take)
+            => Responses.GetResponse("empresa", (await empresaRepository.Read(GetIncludes())).Select(a => a.ToEmpresaModel()));
+
+        public async Task<string> Get(string filter, int skip, int take)
+            => Responses.GetResponse("empresa", (await empresaRepository.Read(GetFilter(filter), GetIncludes())).Select(a => a.ToEmpresaModel()));
+
+        public async Task<string> Post(Empresa model)
         {
-            throw new NotImplementedException();
+            var entityAssociado = model.ToEmpresaEntity();
+            var empresaCriada = await empresaRepository.Create(entityAssociado);
+
+            var associadoEmpresa = model.Associados.ToAssociadoEmpresaEntity(empresaCriada.Id);
+            if (associadoEmpresa != null)
+                await associadoEmpresaRepository.Create(associadoEmpresa);
+
+            return Responses.GetCreatedResponse("empresa", empresaCriada.Id, "Empresa salva.");
         }
 
-        public Task<string> Get(int skip, int take)
+        public async Task<string> Put(Empresa model)
         {
-            throw new NotImplementedException();
+            var entityAssociado = model.ToEmpresaEntity();
+            var empresaCriada = await empresaRepository.Create(entityAssociado);
+
+            var associadoEmpresa = model.Associados.ToAssociadoEmpresaEntity(empresaCriada.Id);
+            if (associadoEmpresa != null)
+                await associadoEmpresaRepository.Update(associadoEmpresa);
+
+            return Responses.GetCreatedResponse("empresa", empresaCriada.Id, "Empresa modificada.");
         }
 
-        public Task<string> Get(string filter, int skip, int take)
+        public async Task<string> Delete(int id)
         {
-            throw new NotImplementedException();
+            await empresaRepository.Delete(id);
+            return Responses.GetObjectResponse("empresa", "Empresa removido.");
         }
 
-        public Task<string> Post(Empresa model)
-        {
-            throw new NotImplementedException();
-        }
+        private Expression<Func<entities.S4E.Associados.Empresa, bool>> GetFilter(string filter)
+            => p => p.Nome.Contains(filter);
 
-        public Task<string> Put(Empresa model)
-        {
-            throw new NotImplementedException();
-        }
+        private List<string> GetIncludes()
+            => new List<string> { "AssociadosEmpresa", "AssociadosEmpresa.Associado" };
     }
 }

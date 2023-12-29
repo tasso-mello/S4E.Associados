@@ -24,7 +24,13 @@ namespace domain.S4E.Associados.Extensions
         #region Empresa
 
         public static Models.Empresa ToEmpresaModel(this entities.S4E.Associados.Empresa empresa)
-            => mapper.Map<Models.Empresa>(empresa);
+        {
+            var converted = mapper.Map<Models.Empresa>(empresa);
+            converted.Associados = mapper.Map<List<Models.Associado>>(empresa.AssociadosEmpresa.Select(e => e.Associado));
+
+            return converted;
+
+        }
 
         public static entities.S4E.Associados.Empresa ToEmpresaEntity(this Models.Empresa empresa)
             => mapper.Map<entities.S4E.Associados.Empresa>(empresa);
