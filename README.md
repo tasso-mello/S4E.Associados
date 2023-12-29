@@ -1,7 +1,5 @@
 # S4E-Associados - README
 
-Bem-vindo ao S4E-Associados!
-
 **Tecnologias Utilizadas:**
 - .NET Core 6
 - JavaScript
