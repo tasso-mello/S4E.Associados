@@ -9,9 +9,13 @@
   <ItemGroup>
     <None Remove="Queries\CreateDatabase.sql" />
     <None Remove="Queries\CreateTables.sql" />
+    <None Remove="Queries\InitialSeed.sql" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Queries\InitialSeed.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Queries\CreateTables.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>

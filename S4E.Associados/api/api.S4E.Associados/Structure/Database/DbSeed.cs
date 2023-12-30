@@ -31,5 +31,16 @@
             myCommand.ExecuteNonQuery();
             myConn.Close();
         }
+
+        public static void InitialSeed(string connection)
+        {
+            var myConn = new SqlConnection(connection);
+
+            SqlCommand myCommand = new SqlCommand(Queries.InitialSeed(), myConn);
+
+            myConn.Open();
+            myCommand.ExecuteNonQuery();
+            myConn.Close();
+        }
     }
 }

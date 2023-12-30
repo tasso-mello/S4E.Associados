@@ -66,6 +66,14 @@ namespace domain.S4E.Associados.Properties {
         ///IF NOT EXISTS (SELECT name FROM sys.databases WHERE name = &apos;S4E-Associados&apos;)
         ///BEGIN
         ///    CREATE DATABASE [S4E-Associados]
+        ///END
+        ///
+        ///
+        ///IF NOT EXISTS (SELECT 1 FROM sys.server_principals WHERE name = &apos;s4e&apos;)
+        ///BEGIN
+        ///    CREATE LOGIN [s4e] WITH PASSWORD=N&apos;jZBMGg+XwNSlPkPeqH7XMR/RzpCYeilPG4DnbojPmtI=&apos;, DEFAULT_DATABASE=[master], DEFAULT_LANGUAGE=[Português (Brasil)], CHECK_EXPIRATION=ON, CHECK_POLICY=ON
+        ///    ALTER LOGIN [s4e] DISABLE
+        ///    ALTER SERVER ROLE [sysadmin] ADD MEMBER [s4e]
         ///END.
         /// </summary>
         internal static string CreateDatabase {
@@ -75,30 +83,41 @@ namespace domain.S4E.Associados.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to USE [S4E-Associados]
+        ///   Looks up a localized string similar to IF EXISTS (SELECT name FROM sys.databases WHERE name = &apos;S4E-Associados&apos;)
+        ///BEGIN    
+        ///    USE [S4E-Associados]
         ///
-        ///IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = &apos;Associados&apos;)
-        ///BEGIN
-        ///    CREATE TABLE Associados
-        ///    (
-        ///        Id BIGINT IDENTITY(1,1) PRIMARY KEY,
-        ///        Nome NVARCHAR(MAX),
-        ///        CPF NVARCHAR(11) UNIQUE,
-        ///        Nascimento DATETIME
-        ///    )
-        ///END
+        ///    IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = &apos;Associados&apos;)
+        ///    BEGIN
+        ///        CREATE TABLE Associados
+        ///        (
+        ///            Id BIGINT IDENTITY(1,1) PRIMARY KEY,
+        ///            Nome NVARCHAR(MAX),
+        ///            CPF NVARCHAR(11) UNIQUE,
+        ///            Nascimento DATETIME
+        ///        )
+        ///    END
         ///
-        ///IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = &apos;Empresas&apos;)
-        ///BEGIN
-        ///    CREATE TABLE Empresas
-        ///    (
-        ///        Id BIGINT IDENTITY(1,1) PRIMARY KEY,
-        ///        Nome NVARCHAR(MAX),
-        ///  [rest of string was truncated]&quot;;.
+        ///    IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string CreateTables {
             get {
                 return ResourceManager.GetString("CreateTables", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IF EXISTS (SELECT name FROM sys.databases WHERE name = &apos;S4E-Associados&apos;)
+        ///BEGIN    
+        ///	USE [S4E-Associados]
+        ///	SET IDENTITY_INSERT [dbo].[Associados] ON 
+        ///	INSERT [dbo].[Associados] ([Id], [Nome], [CPF], [Nascimento]) VALUES (15, N&apos;Associado 1&apos;, N&apos;12345678901&apos;, CAST(N&apos;1990-01-08T00:00:00.000&apos; AS DateTime))
+        ///	INSERT [dbo].[Associados] ([Id], [Nome], [CPF], [Nascimento]) VALUES (16, N&apos;Associado 2&apos;, N&apos;98765432101&apos;, CAST(N&apos;1985-05-15T00:00:00.000&apos; AS DateTime))
+        ///	INSERT [dbo].[Associados] ([Id], [Nome], [CPF], [N [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string InitialSeed {
+            get {
+                return ResourceManager.GetString("InitialSeed", resourceCulture);
             }
         }
     }

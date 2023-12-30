@@ -4,3 +4,11 @@ IF NOT EXISTS (SELECT name FROM sys.databases WHERE name = 'S4E-Associados')
 BEGIN
     CREATE DATABASE [S4E-Associados]
 END
+
+
+IF NOT EXISTS (SELECT 1 FROM sys.server_principals WHERE name = 's4e')
+BEGIN
+    CREATE LOGIN [s4e] WITH PASSWORD=N'jZBMGg+XwNSlPkPeqH7XMR/RzpCYeilPG4DnbojPmtI=', DEFAULT_DATABASE=[master], DEFAULT_LANGUAGE=[Português (Brasil)], CHECK_EXPIRATION=ON, CHECK_POLICY=ON
+    ALTER LOGIN [s4e] DISABLE
+    ALTER SERVER ROLE [sysadmin] ADD MEMBER [s4e]
+END

@@ -9,4 +9,7 @@ public static class Queries
 
     public static string CreateTables()
         => Resources.CreateTables;
+
+    public static string InitialSeed()
+        => Resources.InitialSeed;
 }

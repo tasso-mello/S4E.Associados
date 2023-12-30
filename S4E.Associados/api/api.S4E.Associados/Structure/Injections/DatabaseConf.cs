@@ -9,9 +9,13 @@ namespace api.S4E.Associados.Structure.Injections
         public static IServiceCollection AddDatabaseConf(this IServiceCollection services, ConfigurationManager configuration)
         {
             var canCreateDatabase = Convert.ToBoolean(configuration.GetSection("CanCreateDatabase").Value);
+            var canCreateInnitialSeed = Convert.ToBoolean(configuration.GetSection("CanCreateInnitialSeed").Value);
             
             if(canCreateDatabase)
-                DbSeed.AddDatabase("server=tasso-desk;User ID=s4e;Password=s4e;TrustServerCertificate=True;");
+                DbSeed.AddDatabase("server=localhost;User ID=s4e;Password=s4e;TrustServerCertificate=True;");
+
+            if (canCreateInnitialSeed)
+                DbSeed.InitialSeed("server=localhost;User ID=s4e;Password=s4e;TrustServerCertificate=True;");
 
             var connectionString = configuration.GetConnectionString("SqlConnection");
 
